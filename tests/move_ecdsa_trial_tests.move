@@ -29,7 +29,7 @@ module move_ecdsa_trial::move_ecdsa_trial_tests {
 
         let mut eth_msg = b"\x19Ethereum Signed Message:\n".to_string();
 
-        eth_msg.append(b"7a".to_string());
+        eth_msg.append(b"122".to_string());
         eth_msg.append(message);
 
         std::debug::print(&eth_msg);
