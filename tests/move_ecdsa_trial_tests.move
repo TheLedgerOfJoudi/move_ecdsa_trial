@@ -34,14 +34,16 @@ module move_ecdsa_trial::move_ecdsa_trial_tests {
 
         std::debug::print(&eth_msg);
 
-        let hasher = keccak256(bytes(&eth_msg));
+        // let hasher = keccak256(bytes(&eth_msg));
 
-        std::debug::print(bytes(&eth_msg));
-        std::debug::print(&hasher);
+        let msg = bytes(&eth_msg);
+        
+        std::debug::print(msg);
+        // std::debug::print(&hasher);
 
         let signature = b"0x2888485f650f8ed02d18e32dd9a1512ca05feb83fc2cbf2df72fd8aa4246c5ee541fa53875c70eb64d3de9143446229a250c7a762202b7cc289ed31b74b31c811c";
         
-        let addr = ecrecover_to_eth_address(signature, hasher);
+        let addr = ecrecover_to_eth_address(signature, *msg);
 
         /*
         serialized claim: "0xd1dcfc5338cb588396e44e6449e8c750bd4d76332c7e9440c92383382fced0fd\n0x13239fc6bf3847dfedaf067968141ec0363ca42f\n1712174155\n1"
