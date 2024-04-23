@@ -41,7 +41,7 @@ module move_ecdsa_trial::move_ecdsa_trial_tests {
         std::debug::print(msg);
         // std::debug::print(&hasher);
 
-        let signature = b"0x2888485f650f8ed02d18e32dd9a1512ca05feb83fc2cbf2df72fd8aa4246c5ee541fa53875c70eb64d3de9143446229a250c7a762202b7cc289ed31b74b31c811c";
+        let signature = x"2888485f650f8ed02d18e32dd9a1512ca05feb83fc2cbf2df72fd8aa4246c5ee541fa53875c70eb64d3de9143446229a250c7a762202b7cc289ed31b74b31c811c";
         
         let addr = ecrecover_to_eth_address(signature, *msg);
 
@@ -54,7 +54,7 @@ module move_ecdsa_trial::move_ecdsa_trial_tests {
 
         */
 
-        assert!(addr == b"0x244897572368eadf65bfbc5aec98d8e5443a9072", 0);
+        assert!(addr == x"244897572368eadf65bfbc5aec98d8e5443a9072", 0);
     }  
 }
 
